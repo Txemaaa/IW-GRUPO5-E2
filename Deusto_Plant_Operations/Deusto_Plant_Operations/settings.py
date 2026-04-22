@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-1zoi(0+f=rfz2qsfnd$459--ogn-9jv*o5xn(m8k-(c*a(*zxx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#Aqui para poner la ip por si queremos conectarnos de manera no local [192.168.1.0, 'localhost', '127.0.0.1]
 ALLOWED_HOSTS = []
 
 
