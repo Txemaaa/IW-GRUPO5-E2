@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Empleados</title>
+</head>
+<body>
+    <h1>Empleados</h1>
+    <ul>
+        {% for empleado in empleados %}
+            <li>{{ empleado.nombre }} {{ empleado.apellidos }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

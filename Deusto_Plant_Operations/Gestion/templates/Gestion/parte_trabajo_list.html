@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <title>Partes de Trabajo</title>
+</head>
+<body>  
+    <h1>Partes de Trabajo</h1>
+    <ul>
+        {% for parte in partes_trabajo %}
+            <li>{{ parte.descripcion }} - {{ parte.fecha }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

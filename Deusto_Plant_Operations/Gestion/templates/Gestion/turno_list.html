@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Turnos</title>
+</head>
+<body>
+    <h1>Turnos</h1>
+    <ul>
+        {% for turno in turnos %}
+            <li>{{ turno.nombre }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
