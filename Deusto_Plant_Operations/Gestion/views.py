@@ -16,7 +16,7 @@ def crear_turno(request):
         form = TurnoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('lista_turno')
+            return redirect('lista_turnos')
     else:
         form = TurnoForm()
     return render(request, 'Gestion/crear_turno.html', {'form': form})
@@ -27,7 +27,7 @@ def editar_turno(request, pk):
         form = TurnoForm(request.POST, instance=turno)
         if form.is_valid():
             form.save()
-            return redirect('lista_turno')
+            return redirect('lista_turnos')
     else:
         form = TurnoForm(instance=turno)
     return render(request, 'Gestion/editar_turno.html', {'form': form, 'turno': turno})
@@ -36,7 +36,7 @@ def borrar_turno(request, pk):
     turno = get_object_or_404(Turno, pk=pk)
     if request.method == 'POST':
         turno.delete()
-        return redirect('lista_turno')
+        return redirect('lista_turnos')
     return render(request, 'Gestion/borrar_turno.html', {'turno': turno})
 
 
