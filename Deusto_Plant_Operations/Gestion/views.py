@@ -9,7 +9,7 @@ from .forms import TurnoForm, EmpleadoForm, ParteTrabajoForm
 
 def lista_turnos(request):
     turnos = Turno.objects.all().order_by('fecha')
-    return render(request, 'Gestion/lista_turno.html', {'turnos': turnos})
+    return render(request, 'Gestion/lista_turnos.html', {'turnos': turnos})
 
 def crear_turno(request):
     if request.method == 'POST':
