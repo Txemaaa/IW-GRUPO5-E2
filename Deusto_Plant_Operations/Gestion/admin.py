@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Empleado, Turno, Parte_Trabajo
 
-# Register your models here.
+admin.site.register(Empleado)
+admin.site.register(Turno)
+admin.site.register(Parte_Trabajo)
