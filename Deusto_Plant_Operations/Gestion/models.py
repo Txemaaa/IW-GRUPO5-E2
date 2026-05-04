@@ -13,12 +13,6 @@ class Empleado(models.Model):
         return f"{self.nombre} {self.apellido}"
     
 class Turno(models.Model):
-    Turno_opcion = [
-        ('Mañana'),
-        ('Tarde'),
-        ('Noche'),
-    ]
-
     codigo = models.CharField(max_length=10, unique=True)
     fecha = models.DateField()
     hora_inicio = models.TimeField()
@@ -27,6 +21,8 @@ class Turno(models.Model):
     responsable = models.CharField(max_length=100)
     observaciones = models.TextField(blank=True)
     equipo = models.CharField(max_length=50)
+    empleados_asignados = models.ManyToManyField(Empleado, related_name='turnos_asignados', blank=True)
+    
     def __str__(self):
         return f"Turno {self.codigo} - {self.fecha} - {self.area_trabajo}"
 
@@ -39,7 +35,7 @@ class Parte_Trabajo(models.Model):
     codigo = models.CharField(max_length=10, unique=True)
     turno = models.ForeignKey(Turno, on_delete=models.CASCADE)
     tarea = models.TextField()
-    empleado = models.ForeignKey('Empleado', on_delete=models.CASCADE)
+    empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
     incidencia = models.TextField(blank=True)
     hora_inicio = models.TimeField()
     hora_fin = models.TimeField()
