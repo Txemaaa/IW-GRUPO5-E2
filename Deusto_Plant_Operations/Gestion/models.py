@@ -32,18 +32,18 @@ class Turno(models.Model):
 
 class Parte_Trabajo(models.Model):
     Estados = [
-        ('Pendiente'),
-        ('En Proceso'),
-        ('Completado'),
+        ('pendiente','Pendiente'),
+        ('en_proceso','En Proceso'),
+        ('completado', 'Completado'),
     ]
     codigo = models.CharField(max_length=10, unique=True)
     turno = models.ForeignKey(Turno, on_delete=models.CASCADE)
     tarea = models.TextField()
-    empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
+    empleado = models.ForeignKey('Empleado', on_delete=models.CASCADE)
     incidencia = models.TextField(blank=True)
     hora_inicio = models.TimeField()
     hora_fin = models.TimeField()
-    estado = models.CharField(max_length=20, choices=[('Pendiente'), ('En Proceso'), ('Completado')])
+    estado = models.CharField(max_length=20, choices= Estados, default='pendiente')
     def __str__(self):
         return f"Parte de Trabajo {self.codigo} - Turno {self.turno.codigo}"
 
