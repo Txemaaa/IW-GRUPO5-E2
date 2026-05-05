@@ -1,14 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Turnos</title>
-</head>
-<body>
-    <h1>Turnos</h1>
-    <ul>
+{% extends 'Gestion/index.html' %}
+
+{% block content %}
+
+<h2>Turnos</h2>
+<a href="{% url 'crear_turno' %}">Nuevo Turno</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Fecha</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Área</th>
+            <th>Responsable</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for turno in turnos %}
-            <li>{{ turno.nombre }}</li>
+        <tr>
+            <td>{{ turno.codigo }}</td>
+            <td>{{ turno.fecha }}</td>
+            <td>{{ turno.hora_inicio }}</td>
+            <td>{{ turno.hora_fin }}</td>
+            <td>{{ turno.area_trabajo }}</td>
+            <td>{{ turno.responsable }}</td>
+            <td>
+                <a href="{% url 'editar_turno' turno.pk %}">Editar</a> |
+                <a href="{% url 'borrar_turno' turno.pk %}">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">No hay turnos.</td>
+        </tr>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </tbody>
+</table>
+
+{% endblock %}
