@@ -3,9 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Turno, Empleado, Parte_Trabajo
 from .forms import TurnoForm, EmpleadoForm, ParteTrabajoForm
 
-# ==========================================
-# VISTAS PARA TURNOS
-# ==========================================
+# VISTAS TURNOS
 
 def lista_turnos(request):
     turnos = Turno.objects.all().order_by('fecha')
@@ -40,9 +38,7 @@ def borrar_turno(request, pk):
     return render(request, 'Gestion/borrar_turno.html', {'turno': turno})
 
 
-# ==========================================
-# VISTAS PARA EMPLEADOS
-# ==========================================
+# VISTAS EMPLEADOS
 
 def lista_empleados(request):
     empleados = Empleado.objects.all().order_by('apellido')
@@ -77,9 +73,7 @@ def borrar_empleado(request, pk):
     return render(request, 'Gestion/borrar_empleado.html', {'empleado': empleado})
 
 
-# ==========================================
-# VISTAS PARA PARTES DE TRABAJO
-# ==========================================
+# VISTAS PARTES DE TRABAJO
 
 def lista_partes(request):
     partes = Parte_Trabajo.objects.all().order_by('codigo')
