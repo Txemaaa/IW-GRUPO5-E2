@@ -2,56 +2,16 @@
 
 {% block content %}
 
-<header class="gestion-header">
-  <h1>Panel de gestión</h1>
-  <span style="font-size:13px; color:#6b7280;">
-    <a href="{% url 'gestion:home' %}" style="color:#6b7280; text-decoration:none;">Inicio</a> / Empleados
-  </span>
-</header>
+<h2 class="mb-3">Lista de Empleados</h2>
 
-<div class="gestion-layout">
+<a href="{% url 'crear_empleado' %}" class="btn btn-primary mb-3">+ Crear empleado</a>
 
-  <nav class="sidebar">
-    <span class="sidebar-section">Personas</span>
-    <a href="{% url 'lista_empleados' %}" class="nav-link active">Empleados</a>
-    <a href="{% url 'lista_clientes' %}" class="nav-link">Clientes</a>
-    <a href="{% url 'lista_proveedores' %}" class="nav-link">Proveedores</a>
+<ul class="list-group">
+    {% for empleado in empleados %}
+    <li class="list-group-item">{{ empleado.nombre }} {{ empleado.apellidos }}</li>
+    {% empty %}
+    <li class="list-group-item">No hay empleados registrados.</li>
+    {% endfor %}
+</ul>
 
-    <span class="sidebar-section">Organización</span>
-    <a href="{% url 'lista_departamentos' %}" class="nav-link">Departamentos</a>
-    <a href="{% url 'lista_horarios' %}" class="nav-link">Horarios</a>
-    <a href="{% url 'lista_asistencias' %}" class="nav-link">Asistencias</a>
-    <a href="{% url 'lista_permisos' %}" class="nav-link">Permisos</a>
-    <a href="{% url 'lista_sueldos' %}" class="nav-link">Sueldos</a>
-
-    <span class="sidebar-section">Comercial</span>
-    <a href="{% url 'lista_productos' %}" class="nav-link">Productos</a>
-    <a href="{% url 'lista_ventas' %}" class="nav-link">Ventas</a>
-    <a href="{% url 'lista_inventarios' %}" class="nav-link">Inventarios</a>
-  </nav>
-
-  <main class="main-area">
-    <div class="toolbar">
-      <h2>Empleados</h2>
-        <a href="{% url 'crear_empleado' %}" class="btn-primary">+ Crear empleado</a>    
-    </div>
-
-    <div class="employee-list">
-      {% for empleado in empleados %}
-      <div class="employee-item">
-        <div class="avatar">
-          {{ empleado.nombre|slice:":1" }}{{ empleado.apellidos|slice:":1" }}
-        </div>
-        <div>
-          <div class="employee-name">{{ empleado.nombre }} {{ empleado.apellidos }}</div>
-          <div class="employee-sub">Empleado #{{ forloop.counter }}</div>
-        </div>
-      </div>
-      {% empty %}
-      <div class="empty-state">No hay empleados registrados aún.</div>
-      {% endfor %}
-    </div>
-  </main>
-
-</div>
 {% endblock %}
