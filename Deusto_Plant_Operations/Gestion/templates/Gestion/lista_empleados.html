@@ -8,7 +8,7 @@
 
 <ul class="list-group">
     {% for empleado in empleados %}
-    <li class="list-group-item">{{ empleado.nombre }} {{ empleado.apellidos }}</li>
+    <li class="list-group-item">{{ empleado.nombre }} {{ empleado.apellido }}</li>
     {% empty %}
     <li class="list-group-item">No hay empleados registrados.</li>
     {% endfor %}
