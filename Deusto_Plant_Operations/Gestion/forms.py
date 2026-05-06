@@ -17,7 +17,7 @@ class EmpleadoForm(forms.ModelForm):
 class TurnoForm(forms.ModelForm):
     class Meta:
         model = Turno
-        fields = '__all__'
+        fields = ['codigo', 'fecha', 'hora_inicio', 'hora_fin', 'area_trabajo', 'responsable', 'equipo', 'observaciones']
         widgets = {
             'codigo': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
