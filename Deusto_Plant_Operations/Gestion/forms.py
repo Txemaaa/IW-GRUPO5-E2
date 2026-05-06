@@ -26,7 +26,6 @@ class TurnoForm(forms.ModelForm):
             'area_trabajo': forms.TextInput(attrs={'class': 'form-control'}),
             'responsable': forms.TextInput(attrs={'class': 'form-select'}),
             'observaciones': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
-            'empleados_asignados' : forms.CheckboxSelectMultiple(attrs={'class': 'form-check-input'}),
         }
 
 class ParteTrabajoForm(forms.ModelForm):
