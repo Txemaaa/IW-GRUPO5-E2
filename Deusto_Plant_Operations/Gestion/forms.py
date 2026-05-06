@@ -24,7 +24,7 @@ class TurnoForm(forms.ModelForm):
             'hora_inicio': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),
             'hora_fin': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),
             'area_trabajo': forms.TextInput(attrs={'class': 'form-control'}),
-            'responsable': forms.Select(attrs={'class': 'form-select'}),
+            'responsable': forms.TextInput(attrs={'class': 'form-select'}),
             'observaciones': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
             'empleados_asignados' : forms.CheckboxSelectMultiple(attrs={'class': 'form-check-input'}),
         }
