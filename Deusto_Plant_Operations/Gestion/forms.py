@@ -17,15 +17,16 @@ class EmpleadoForm(forms.ModelForm):
 class TurnoForm(forms.ModelForm):
     class Meta:
         model = Turno
-        fields = ['codigo', 'fecha', 'hora_inicio', 'hora_fin', 'area_trabajo', 'responsable', 'equipo', 'observaciones']
+        fields = ['codigo', 'fecha', 'hora_inicio', 'hora_fin', 'area_trabajo', 'responsable', 'equipo', 'observaciones', 'empleados_asignados']
         widgets = {
             'codigo': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'hora_inicio': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),
             'hora_fin': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),
             'area_trabajo': forms.TextInput(attrs={'class': 'form-control'}),
-            'responsable': forms.TextInput(attrs={'class': 'form-select'}),
+            'responsable': forms.TextInput(attrs={'class': 'form-control'}),
             'observaciones': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'empleados_asignados': forms.SelectMultiple(attrs={'class': 'form-select'}),
         }
 
 class ParteTrabajoForm(forms.ModelForm):
