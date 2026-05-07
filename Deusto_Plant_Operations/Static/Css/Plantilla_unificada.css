@@ -2,6 +2,12 @@
 
 
 /* Header */
+.navbar-brand {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
 .navbar {
     background-color: #1b4332;
     padding: 15px 0;

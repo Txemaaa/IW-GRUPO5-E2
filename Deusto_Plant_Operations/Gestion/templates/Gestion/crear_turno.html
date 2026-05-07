@@ -8,20 +8,20 @@
     <title>Nuevo Turno</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'Css/Plantilla_unificada.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Css_crear_turno.css' %}">
 </head>
+
 
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">Planta Deusto</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'lista_turnos' %}">Turnos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'lista_empleados' %}">Empleados</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'lista_partes' %}">Partes de Trabajo</a></li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container d-flex flex-column align-items-center">
+            <a class="navbar-brand" href="/">Planta Deusto</a>
+            <ul class="navbar-nav d-flex flex-row gap-3">
+                <li class="nav-item"><a class="nav-link" href="/turnos/">Turnos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/empleados/">Empleados</a></li>
+                <li class="nav-item"><a class="nav-link" href="/partes/">Partes de Trabajo</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -110,6 +110,9 @@
             </div>
         </form>
     </div>
+    <footer style="background-color: #1b4332; color: #b7e4c7; text-align: center; padding: 15px 0; position: fixed; bottom: 0; width: 100%;">
+    <p>Deusto Plant Operations S.L. | Grupo 5 | David Orive, Juan María Díaz, Diego Suárez</p>
+    </footer>
 
 </body>
 
