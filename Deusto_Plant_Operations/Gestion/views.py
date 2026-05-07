@@ -2,6 +2,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Turno, Empleado, Parte_Trabajo
 from .forms import TurnoForm, EmpleadoForm, ParteTrabajoForm
+def inicio(request):
+    return render(request, 'Gestion/index.html')
 
 # VISTAS TURNOS
 

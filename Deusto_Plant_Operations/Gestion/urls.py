@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('', views.inicio, name='inicio'),
+
     ## Rutas para Turnos
     path('turnos/', views.lista_turnos, name='lista_turnos'),
     path('turnos/nuevo/', views.crear_turno, name='crear_turno'),
