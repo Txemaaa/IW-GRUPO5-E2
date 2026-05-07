@@ -23,10 +23,10 @@
 
     <div class="container">
         <h2>Empleados</h2>
-        <a href="{% url 'crear_empleado' %}">Nuevo Empleado</a>
+        <a href="{% url 'crear_empleado' %}" class="btn btn-dark">+ Nuevo Empleado</a>
 
-        <table class="table table-bordered mt-3">
-            <thead>
+        <table class="table table-bordered table-hover mt-3">
+            <thead class="table-dark">
                 <tr>
                     <th>DNI</th>
                     <th>Nombre</th>
@@ -47,9 +47,9 @@
                     <td>{{ empleado.telefono }}</td>
                     <td>{{ empleado.puesto }}</td>
                     <td>
-                        <a href="{% url 'editar_empleado' empleado.pk %}">Editar</a> |
-                        <a href="{% url 'borrar_empleado' empleado.pk %}">Eliminar</a>
-                    </td>
+                        <a href="{% url 'editar_empleado' empleado.pk %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a href="{% url 'borrar_empleado' empleado.pk %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                    </td>       
                 </tr>
                 {% empty %}
                 <tr>
