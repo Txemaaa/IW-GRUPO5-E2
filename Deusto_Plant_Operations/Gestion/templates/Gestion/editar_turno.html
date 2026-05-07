@@ -93,7 +93,13 @@
 
             <div class="mb-3">
                 <label class="form-label">Empleados asignados</label>
-                {{ form.empleados_asignados }}
+                <div style="border: 1px solid #ced4da; border-radius: 4px; padding: 15px; background-color: white;">
+                    {% for empleado in form.empleados_asignados %}
+                    <div style="margin-bottom: 8px;">
+                        {{ empleado.tag }} {{ empleado.choice_label }}
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
 
             <a href="{% url 'lista_partes' %}" class="btn btn-secondary">Cancelar</a>
