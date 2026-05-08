@@ -32,3 +32,13 @@ hr {
     background-color: #b02a37;
     border-color: #b02a37;
 }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}

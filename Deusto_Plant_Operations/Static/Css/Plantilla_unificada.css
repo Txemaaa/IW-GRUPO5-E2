@@ -1,22 +1,15 @@
-
-
-
 /* Header */
-.navbar-brand {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-}
-
 .navbar {
     background-color: #1b4332;
     padding: 15px 0;
 }
 
 .navbar-brand {
+    font-family: 'Raleway', sans-serif;
     color: #d8f3dc;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .nav-link {
@@ -34,7 +27,7 @@
     color: #b7e4c7;
     text-align: center;
     padding: 15px 0;
-    margin-top: 40px;
+    margin-top: auto;
 }
 
 /* Botones */
@@ -76,6 +69,9 @@
 /* General */
 body {
     background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h2 {
@@ -85,4 +81,5 @@ h2 {
 
 .container {
     margin-top: 20px;
+    flex: 1;
 }
