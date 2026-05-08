@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Deusto_Plant_Operations.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL')
+        default=config('DATABASE_URL', default='sqlite:///db.sqlite3')
     )
 }
 
