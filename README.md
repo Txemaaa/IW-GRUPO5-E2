@@ -11,3 +11,4 @@ Las funcionalidades mínimas implementadas son:
 Gestión de turnos: alta, listado, detalle, actualización y baja.
 Gestión de partes de trabajo: alta, listado, detalle, actualización y baja.
 Gestión de empleados: alta, listado, detalle, actualización y baja.
+Migrar la base de datos a local para tener el archivo db.sqlite3 como requisito de la E2.
