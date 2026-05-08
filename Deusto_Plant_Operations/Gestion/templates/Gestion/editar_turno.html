@@ -93,7 +93,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Empleados asignados</label>
-                <div style="border: 1px solid #ced4da; border-radius: 4px; padding: 15px; background-color: white;">
+                <div>
                     {% for empleado in form.empleados_asignados %}
                     <div style="margin-bottom: 8px;">
                         {{ empleado.tag }} {{ empleado.choice_label }}
@@ -106,7 +106,7 @@
             <button type="submit" class="btn btn-dark">Guardar cambios</button>
         </form>
     </div>
-    <footer style="background-color: #1b4332; color: #b7e4c7; text-align: center; padding: 15px 0; position: fixed; bottom: 0; width: 100%;">
+    <footer class="footer">
     <p>Deusto Plant Operations S.L. | Grupo 5 | David Orive, Juan María Díaz, Diego Suárez</p>
     </footer>
 
