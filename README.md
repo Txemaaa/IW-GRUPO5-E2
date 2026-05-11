@@ -11,4 +11,4 @@ Las funcionalidades mínimas implementadas son:
 Gestión de turnos: alta, listado, detalle, actualización y baja.
 Gestión de partes de trabajo: alta, listado, detalle, actualización y baja.
 Gestión de empleados: alta, listado, detalle, actualización y baja.
-Migrar la base de datos a local para tener el archivo db.sqlite3 como requisito de la E2.
+La base de datos está alojada en Neon (PostgreSQL en la nube). Las credenciales de conexión están incluidas en el archivo .env. La aplicación se conecta automáticamente a Neon al arrancar el servidor.
