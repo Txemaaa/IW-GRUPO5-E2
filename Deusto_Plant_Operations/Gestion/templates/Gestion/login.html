@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<script src="{% static 'js/login.js' %}"></script>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Planta Deusto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'Css/Plantilla_unificada.css' %}">
+</head>
+<body class="bg-light">
+
+    <div class="container" style="max-width: 400px; margin-top: 100px;">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="text-center mb-4">Planta Deusto</h2>
+                <hr>
+
+                <div id="error-msg" class="alert alert-danger d-none"></div>
+
+                <form id="login-form">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Usuario</label>
+                        <input type="text" id="username" class="form-control" placeholder="Introduce tu usuario">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" id="password" class="form-control" placeholder="Introduce tu contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    <p>Deusto Plant Operations S.L. | Grupo 5 | David Orive, Juan María Díaz, Diego Suárez</p>
+    </footer>
+</body>
+</html>

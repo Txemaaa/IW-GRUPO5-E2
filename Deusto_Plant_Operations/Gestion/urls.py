@@ -27,4 +27,5 @@ urlpatterns = [
 
     # Ruta para el perfil del usuario autenticado
     path('api/me/', views.MiPerfilAPIView.as_view(), name='api_me'),
+    path('login/', views.login_view, name='login'),
 ]

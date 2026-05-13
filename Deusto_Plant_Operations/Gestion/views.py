@@ -1,4 +1,6 @@
 
+from urllib import request
+
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Turno, Empleado, Parte_Trabajo
 from .forms import TurnoForm, EmpleadoForm, ParteTrabajoForm
@@ -122,3 +124,6 @@ class MiPerfilAPIView(APIView):
             'username': request.user.username,
             'email': request.user.email,
         })
+    
+def login_view(request):
+    return render(request, 'Gestion/login.html')
