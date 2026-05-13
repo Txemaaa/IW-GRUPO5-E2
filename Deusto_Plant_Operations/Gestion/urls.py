@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from . import views
+
+
 
 urlpatterns = [
     path('', views.inicio, name='inicio'),
@@ -21,4 +24,7 @@ urlpatterns = [
     path('partes/nuevo/', views.crear_parte, name='crear_parte'),
     path('partes/editar/<int:pk>/', views.editar_parte, name='editar_parte'),
     path('partes/borrar/<int:pk>/', views.borrar_parte, name='borrar_parte'),
+
+    # Ruta para el perfil del usuario autenticado
+    path('api/me/', views.MiPerfilAPIView.as_view(), name='api_me'),
 ]

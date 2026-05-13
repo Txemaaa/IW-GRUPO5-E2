@@ -2,6 +2,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Turno, Empleado, Parte_Trabajo
 from .forms import TurnoForm, EmpleadoForm, ParteTrabajoForm
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+
 def inicio(request):
     return render(request, 'Gestion/index.html')
 
@@ -108,3 +112,13 @@ def borrar_parte(request, pk):
         parte.delete()
         return redirect('lista_partes')
     return render(request, 'Gestion/borrar_parte.html', {'parte': parte})
+
+class MiPerfilAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({
+            'id': request.user.id,
+            'username': request.user.username,
+            'email': request.user.email,
+        })

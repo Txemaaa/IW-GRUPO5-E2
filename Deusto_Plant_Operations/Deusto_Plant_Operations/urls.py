@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #Añado los path para el login y logout de la aplicacion.
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     #Añado el path de la app. Con include lo que hacemos es incluir todas las urls de la aplicacion sin necesidad de escribirlas aqui
     path('', include('Gestion.urls'),)
 ]
