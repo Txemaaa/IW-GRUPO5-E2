@@ -58,6 +58,17 @@
                 {% endfor %}
             </tbody>
         </table>
+         <div class="mt-3">
+            {% if turnos.has_previous %}
+                <a href="?page={{ turnos.previous_page_number }}">Anterior</a>
+            {% endif %}
+
+            <span>Página {{ turnos.number }} de {{ turnos.paginator.num_pages }}</span>
+
+            {% if turnos.has_next %}
+                <a href="?page={{ turnos.next_page_number }}">Siguiente</a>
+            {% endif %}
+        </div>
     </div>
     <footer class="footer">
     <p>Deusto Plant Operations S.L. | Grupo 5 | David Orive, Juan María Díaz, Diego Suárez</p>

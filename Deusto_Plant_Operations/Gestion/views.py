@@ -1,6 +1,6 @@
 
 from urllib import request
-
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Turno, Empleado, Parte_Trabajo
 from .forms import TurnoForm, EmpleadoForm, ParteTrabajoForm
@@ -14,7 +14,10 @@ def inicio(request):
 # VISTAS TURNOS
 
 def lista_turnos(request):
-    turnos = Turno.objects.all().order_by('fecha')
+    todos_los_turnos = Turno.objects.all().order_by('fecha')
+    paginador = Paginator(todos_los_turnos, 5)
+    pagina = request.GET.get('page')
+    turnos = paginador.get_page(pagina)
     return render(request, 'Gestion/lista_turnos.html', {'turnos': turnos})
 
 def crear_turno(request):
@@ -49,7 +52,10 @@ def borrar_turno(request, pk):
 # VISTAS EMPLEADOS
 
 def lista_empleados(request):
-    empleados = Empleado.objects.all().order_by('apellido')
+    todos_los_empleados = Empleado.objects.all().order_by('apellido')
+    paginador = Paginator(todos_los_empleados, 5)
+    pagina = request.GET.get('page')
+    empleados = paginador.get_page(pagina)
     return render(request, 'Gestion/lista_empleados.html', {'empleados': empleados})
 
 def crear_empleado(request):
@@ -84,7 +90,10 @@ def borrar_empleado(request, pk):
 # VISTAS PARTES DE TRABAJO
 
 def lista_partes(request):
-    partes = Parte_Trabajo.objects.all().order_by('codigo')
+    todos_los_partes = Parte_Trabajo.objects.all().order_by('codigo')
+    paginador = Paginator(todos_los_partes, 5)
+    pagina = request.GET.get('page')
+    partes = paginador.get_page(pagina)
     return render(request, 'Gestion/lista_partes.html', {'partes': partes})
 
 def crear_parte(request):
