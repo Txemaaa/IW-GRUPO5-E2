@@ -90,11 +90,26 @@ def borrar_empleado(request, pk):
 # VISTAS PARTES DE TRABAJO
 
 def lista_partes(request):
-    todos_los_partes = Parte_Trabajo.objects.all().order_by('codigo')
-    paginador = Paginator(todos_los_partes, 5)
+    partes = Parte_Trabajo.objects.all().order_by('codigo')
+    
+    empleado_busqueda = request.GET.get('empleado', '')
+    estado_busqueda = request.GET.get('estado', '')
+    
+    if empleado_busqueda:
+        partes = partes.filter(empleado__nombre__icontains=empleado_busqueda)
+    
+    if estado_busqueda:
+        partes = partes.filter(estado=estado_busqueda)
+    
+    paginador = Paginator(partes, 5)
     pagina = request.GET.get('page')
     partes = paginador.get_page(pagina)
-    return render(request, 'Gestion/lista_partes.html', {'partes': partes})
+    
+    return render(request, 'Gestion/lista_partes.html', {
+        'partes': partes,
+        'empleado_busqueda': empleado_busqueda,
+        'estado_busqueda': estado_busqueda,
+    })
 
 def crear_parte(request):
     if request.method == 'POST':
